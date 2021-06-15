@@ -1,9 +1,11 @@
 # Project Overview
 
-Sparkify would like to analyse data they are collecting from their music streaming app. The analytics team in interested in understanding what songs are being listened to. The data is stored in directories for JSON logs for user activity and JSON metadata of all the songs. They would like the data in a Postgres database via an ETL process to enable analysis.
+Sparkify would like to analyse data they are collecting from their music streaming app. The analytics team in interested in understanding what songs are being listened to. The data is stored in directories for JSON logs for user activity and JSON metadata of all the songs.
+
+They would like a data engineer create an ETL process in order to be able to better read the data. This data will be stored in a Postgres database and will be easily analysed.
 
 ## Data
-Data is stored of JSON files under two folders
+Data is currently stored in JSON files under two folders
 - Songs
     - metadata about songs
 - Logs
@@ -15,9 +17,9 @@ For analysis a Star Schema data model was developed containing a fact table and 
 Fact table
 - *songplays* stores the song play records, containing info for each song play
 Dimension tables
-- *songs* stores the songs in the music database
-- *artists* stores the artists the in music database
-- *users* stores the users in the app
+- *songs* contains info about the songs in the music database
+- *artists* contains all the artists in music database
+- *users* contains all the users of the app
 - *time* stores the timestamps of records in songplays by specific units
 
 
@@ -28,9 +30,9 @@ The ETL contains the following:
 1. sql_queries.py
     - contains the sql queries used by the *create_tables.py* and *etl.py* python programs.
 2. create_tables.py
-    - drops and creates database and tables
+    - drops and creates database and tables listed above
 3. etl.py
-    - accesses, transforms and pushes data to the various postgres tables
+    - accesses, transforms and pushes data into the various postgres tables listed above
 
 There are two additional files (jupyter notebooks) used to prototype and test the ETL application.
 4. etl.ipynb
@@ -46,3 +48,4 @@ The ETL program uses the following file path structure:
     python create_tables.py
 2. run etl.py  -  This will extract the data from JSON files and insert them into respective tables.
     python etl.py
+    
