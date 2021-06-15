@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS users (user_id int, first_name text, last_name text, 
 
 song_table_create = (""" 
 CREATE TABLE IF NOT EXISTS songs (
-                                  song_id varchar, 
+                                  song_id varchar PRIMARY KEY, 
                                   title varchar, 
                                   artist_id varchar, 
                                   year int, 
