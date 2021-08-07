@@ -20,14 +20,17 @@ This projects processes data from multiple sources. Here have multiple S3 bucket
 - Process the data from the configured S3 data sources by executing etl.py.
 
 #### Database schema
-##### Table	Description
-- Staging_events	stating table for event data
-- Staging_songs	staging table for song data
-- Songplays	information how songs were played, e.g. when by which user in which session
-- Users	user-related information such as name, gender and level
-- Songs	song-related information containing name, artist, year and duration
-- Artists	artist name and location (geo-coords and textual location)
-- time	time-related info for timestamps
+##### Tables
+###### Staging
+- Staging_events	- stating table for event data
+- Staging_songs	- staging table for song data
+###### Facts
+- Songplays	- information how songs were played, e.g. when by which user in which session
+###### Dimensions
+- Users	- user-related information such as name, gender and level
+- Songs	- song-related information containing name, artist, year and duration
+- Artists	- artist name and location (geo-coords and textual location)
+- Time	- time-related info for timestamps
 
 #### ETL pipeline
 - Load song and log data both from S3 buckets.
