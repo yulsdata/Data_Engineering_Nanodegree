@@ -18,19 +18,22 @@ This projects processes data from multiple sources. Here have multiple S3 bucket
 - Setup a redshift cluster on AWS and insert the connection details in dwh.cfg.
 - Create the needed the database structure by executing create_tables.py.
 - Process the data from the configured S3 data sources by executing etl.py.
+
 #### Database schema
 ##### Table	Description
-staging_events	stating table for event data
-staging_songs	staging table for song data
-songplays	information how songs were played, e.g. when by which user in which session
-users	user-related information such as name, gender and level
-songs	song-related information containing name, artist, year and duration
-artists	artist name and location (geo-coords and textual location)
-time	time-related info for timestamps
-ETL pipeline
-Load song and log data both from S3 buckets.
-Stage the loaded data.
-Transform the data into the above described data schema.
-Example queries
-Find all users at a certain location: SELECT DISTINCT users.user_id FROM users JOIN songplays ON songplays.user_id = users.user_id WHERE songplays.location = <LOCATION>
-Find all songs by a given artist: SELECT songs.song_id FROM songs JOIN artists ON songs.artist_id = artists.artist_id WHERE artist.name = <ARTIST>
+- Staging_events	stating table for event data
+- Staging_songs	staging table for song data
+- Songplays	information how songs were played, e.g. when by which user in which session
+- Users	user-related information such as name, gender and level
+- Songs	song-related information containing name, artist, year and duration
+- Artists	artist name and location (geo-coords and textual location)
+- time	time-related info for timestamps
+
+#### ETL pipeline
+- Load song and log data both from S3 buckets.
+- Stage the loaded data.
+- Transform the data into the above described data schema.
+
+### How to Run
+1. Create tables by running 'create_tables.py'.
+2. Execute ETL process by running 'etl.py'.
