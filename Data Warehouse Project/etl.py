@@ -36,9 +36,10 @@ def main():
     populates the final tables with data from the staging tables
     
     terminates the connection with redshift
+    """
     config = configparser.ConfigParser()
     config.read('dwh.cfg')
-    """
+    
     conn = psycopg2.connect("host={} dbname={} user={} password={} port={}".format(config.get("DWH","HOST"), 
                                                                                    config.get("DWH","DB_NAME"),
                                                                                    config.get("DWH","DB_USER"),
