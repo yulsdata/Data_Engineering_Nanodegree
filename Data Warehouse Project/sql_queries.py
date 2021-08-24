@@ -21,7 +21,7 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 
 staging_events_table_create = ("""
 create table if not exists staging_events (
-                                            event_id        INT IDENTINY(0,1),
+                                            event_id        INT IDENTITY(0,1),
                                             artist          VARCHAR,
                                             auth            VARCHAR,
                                             firstName       VARCHAR,
